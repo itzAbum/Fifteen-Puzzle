@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>15 Puzzle</title>
+    <link rel="stylesheet" href="puzzle.css">
+</head>
+
+
+<body>
+
+    <h1>Fifteen Puzzle</h1>
+
+    
+<div id="registration-section" style="margin: 20px auto; max-width: 400px; text-align: center;">
+    <h2>User Registration</h2>
+    <form action="save_state.php" method="POST">
+        <input type="hidden" name="action" value="register">
+        
+        <div style="margin-bottom: 10px;">
+            <label>Username:</label><br>
+            <input type="text" name="username" required style="width: 100%; padding: 8px;">
+        </div>
+        
+        <div style="margin-bottom: 10px;">
+            <label>Email:</label><br>
+            <input type="email" name="email" required style="width: 100%; padding: 8px;">
+        </div>
+        
+        <div style="margin-bottom: 10px;">
+            <label>Password:</label><br>
+            <input type="password" name="password" required style="width: 100%; padding: 8px;">
+        </div>
+        
+        <button type="submit" class="btn">Register</button>
+    </form>
+
+        </div>
+</div>
+
+
+    <h2>
+        The goal of the fifteen puzzle is to un-jumble its fifteen squares by repetedly making moves that slide squares into the empty space
+        How quickly can you solve it?<br><br>
+    </h2>
+
+
+    <label for="img-select">Choose an image:</label>
+    <select id="img-select">
+        <option value="sonic.png">Sonic</option>
+        <option value="mario.png">Mario</option>
+        <option value="Pikachu.png">Pikachu</option>
+        <option value="bowser.png">Bowser</option>
+    </select>
+
+    <div id="winAnimation" class="win-container">
+
+
+    </div>
+
+    <div id="win-message" style="display: none; text-align: center;">
+        <div style="font-size: 25px;">Time: <span id="win-time"></span></div>
+        <div style="font-size: 25px;">Moves: <span id="win-moves"></span></div>
+        <button class="btn" id="restart">Play Again</button>
+    </div>
+
+    <audio id="bgm" loop style="display: none;">
+        <source src="Kahoot_music.mp3" type="audio/mpeg">
+    </audio>
+
+    <audio id="gong" style="display: none;">
+        <source src="gong.mp3" type="audio/mpeg">
+    </audio>
+
+
+    <div id="puzzlearea">
+        <!-- 15 tiles (numbered 1 to 15)-->
+        <div class="tile" id="tile1">1</div>
+        <div class="tile" id="tile2">2</div>
+        <div class="tile" id="tile3">3</div>
+        <div class="tile" id="tile4">4</div>
+        <div class="tile" id="tile5">5</div>
+        <div class="tile" id="tile6">6</div>
+        <div class="tile" id="tile7">7</div>
+        <div class="tile" id="tile8">8</div>
+        <div class="tile" id="tile9">9</div>
+        <div class="tile" id="tile10">10</div>
+        <div class="tile" id="tile11">11</div>
+        <div class="tile" id="tile12">12</div>
+        <div class="tile" id="tile13">13</div>
+        <div class="tile" id="tile14">14</div>
+        <div class="tile" id="tile15">15</div>
+    </div>
+
+
+    <div id="game-stats" style="text-align: center; margin: 10px; font-size: 25px;">
+        <div>Time: <span id="time-display">00:00</span></div>
+        <div>Moves: <span id="move-display">0</span></div>
+    </div>
+    <div id="game-footer">
+        <div class="shuffle">
+            <button id="shuffler" class="btn">Shuffle</button>
+        </div>
+
+
+
+        <h3>
+            American puzzle author and mathematician Sam Loyd is often falsely credited with creating the puzzle; indeed, Loyd
+            claimed from 1891 until his death in 1911 that he invented it. The puzzle was actually created around 1874 by Noyes Palmer Champman,
+            a postmaster in Canastota, New York.
+        </h3>
+
+
+
+        <div class="validators">
+            <a href="https://github.com/itzAbum/Fifteen-Puzzle.git" target="_blank"><img src="github.png" alt="github" style="width: 100px; height: 42px;"></a>
+            <a href="https://jigsaw.w3.org/css-validator/" target="_blank"><img src="css.png" alt="cee es es" style="width: 100px; height: 42px;"></a>
+            <a href="https://validator.w3.org/" target="_blank"><img src="xhtml.png" alt="html" style="width: 100px; height: 42px;"></a>
+
+        </div>
+
+
+
+        <p>*Extra features implemented: End of game notification/screen, Multiple (4) Background Images, Gametime with music files. (Grade first 2)</p>
+
+
+
+
+
+    </div>
+
+
+
+
+
+    <script src="fifteen.js"></script>
+
+</body>
+</html>
